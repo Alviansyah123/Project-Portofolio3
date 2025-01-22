@@ -1,0 +1,868 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Merriweather", serif;
+}
+.all-content {
+  background: #f7f5f2;
+}
+html::-webkit-scrollbar-track {
+  background: #f4d8b4;
+  border-radius: 10px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #b2744c;
+  border-radius: 10px;
+  border: 2px solid #e2c09b;
+}
+
+html::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: #8b5a3b;
+}
+
+/* navbar */
+#navbar {
+  background-color: #f4d8b4;
+  font-family: "Roboto", sans-serif;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  padding: 10px 20px;
+  position: relative;
+  z-index: 10;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  margin: 10px auto;
+  width: calc(100% - 40px);
+  border-radius: 10px;
+}
+
+#navbar:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+#logo img {
+  border-radius: 10px;
+  width: 160px;
+  margin-left: 40px;
+  transition: transform 0.5s ease;
+}
+
+#logo img:hover {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+.navbar-nav {
+  margin-left: 50px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-item .nav-link {
+  color: #5a3e2b;
+  margin-left: 10px;
+  font-weight: bold;
+  padding: 10px 15px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  transition: all 0.4s ease-in-out;
+  position: relative;
+  z-index: 1;
+}
+
+.nav-item .nav-link:hover {
+  background: #fff8f2;
+  color: #4a2c1a;
+  border-color: #f4d8b4;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+.nav-item .nav-link:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #fff8f2;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease-in-out;
+  z-index: -1;
+}
+
+.nav-item .nav-link:hover:after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.nav-item .nav-link.active {
+  background: #fff8f2;
+  color: #4a2c1a;
+  font-weight: bold;
+  border-color: #f4d8b4;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#navbar form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+#navbar form input {
+  padding: 10px 15px;
+  border: 2px solid #f4d8b4;
+  border-radius: 50px;
+  outline: none;
+  font-size: 16px;
+  width: 250px;
+  transition: all 0.4s ease-in-out;
+}
+
+#navbar form input:focus {
+  border-color: #fff8f2;
+  box-shadow: 0 0 5px rgba(244, 216, 180, 0.7);
+}
+
+#navbar form input::placeholder {
+  color: #f4d8b4;
+  font-style: italic;
+}
+
+#navbar form button {
+  background: linear-gradient(135deg, #f4d8b4, #fff8f2);
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+
+#navbar form button:hover {
+  background: #f4d8b4;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 835px) and (max-width: 1115px) {
+  #navbar {
+    padding: 10px;
+    margin: 10px auto;
+    width: calc(100% - 40px);
+  }
+
+  #logo img {
+    width: 120px;
+    margin-left: -10px;
+    margin-bottom: 8px;
+  }
+
+  .navbar-nav {
+    margin-left: 0;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .nav-item .nav-link {
+    width: 60px;
+    padding: 4px 10px;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  #navbar form {
+    flex-direction: row;
+    gap: 5px;
+    align-items: stretch;
+  }
+
+  #navbar form input {
+    width: 250px;
+  }
+
+  #navbar form button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 835px) {
+  #navbar {
+    padding: 10px;
+    margin: 10px auto;
+    width: calc(100% - 40px);
+  }
+
+  #logo img {
+    width: 120px;
+    margin-left: -10px;
+    margin-bottom: 8px;
+  }
+
+  .navbar-nav {
+    margin-left: 0;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-item .nav-link {
+    width: 80px;
+    padding: 4px 10px;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  #navbar form {
+    flex-direction: column;
+    gap: 5px;
+    align-items: stretch;
+  }
+
+  #navbar form input {
+    width: 100%;
+  }
+
+  #navbar form button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  #logo img {
+    width: 100px;
+    margin-left: -0px;
+    margin-bottom: 8px;
+  }
+
+  .nav-item .nav-link {
+    width: 80px;
+    padding: 4px 10px;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  #navbar form {
+    flex-direction: column;
+    gap: 5px;
+    align-items: stretch;
+  }
+
+  #navbar form input {
+    width: 100%;
+  }
+
+  #navbar form button {
+    width: 100%;
+  }
+}
+
+/* navbar */
+
+/* Produk */
+.product {
+  width: 100%;
+  background: #f7f5f2;
+  font-family: "Roboto", sans-serif;
+}
+
+.heading4 {
+  text-align: center;
+  color: #b2744c;
+  font-size: 30px;
+  font-weight: bold;
+  padding-top: 70px;
+  border-bottom: 2px solid #b2744c;
+}
+
+#container3 {
+  margin-top: 30px;
+}
+
+.product h3 {
+  text-align: center;
+  color: #b2744c;
+  font-size: 23px;
+}
+
+.product p {
+  color: #b2744c;
+  padding-top: 10px;
+}
+
+.product p span {
+  float: right;
+  cursor: pointer;
+}
+
+/* Animasi Produk ke Keranjang */
+@keyframes flyToCart {
+  from {
+    transform: scale(1) translate(0, 0);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.5) translate(100px, -100px); /* Sesuaikan arah dan jarak */
+    opacity: 0;
+  }
+}
+
+.cart-shopping.fly {
+  animation: flyToCart 1s ease-in-out forwards;
+  position: absolute;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+/* Ikon Keranjang */
+.cart-icon {
+  position: fixed;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, #f4d8b4, #fff8f2);
+  color: #4a2c1a;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  width: 80px;
+}
+
+.cart-icon:hover {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+.cart-icon i {
+  font-size: 1.75rem;
+}
+
+.cart-icon span {
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.cart-icon .total-price {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 5px;
+  display: block;
+  color: #4a2c1a;
+}
+
+/* Responsivitas */
+
+/* Layar Extra Besar (≥1200px) */
+@media (min-width: 1200px) {
+  .cart-icon {
+    width: 80px;
+    padding: 12px;
+    font-size: 1.1rem;
+  }
+
+  .cart-icon i {
+    font-size: 1.7rem;
+  }
+
+  .cart-icon span {
+    font-size: 0.8rem;
+  }
+
+  .cart-icon .total-price {
+    font-size: 0.75rem;
+  }
+}
+
+/* Layar Besar (≥992px dan <1200px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .cart-icon {
+    width: 75px;
+    padding: 11px;
+    font-size: 1.05rem;
+  }
+
+  .cart-icon i {
+    font-size: 1.6rem;
+  }
+
+  .cart-icon span {
+    font-size: 0.78rem;
+  }
+
+  .cart-icon .total-price {
+    font-size: 0.73rem;
+  }
+}
+
+/* Layar Sedang (≥768px dan <992px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .cart-icon {
+    width: 70px;
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .cart-icon i {
+    font-size: 1.5rem;
+  }
+
+  .cart-icon span {
+    font-size: 0.75rem;
+  }
+
+  .cart-icon .total-price {
+    font-size: 0.7rem;
+  }
+}
+
+/* Layar Kecil (≥576px dan <768px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .cart-icon {
+    width: 65px;
+    padding: 8px;
+    font-size: 0.95rem;
+  }
+
+  .cart-icon i {
+    font-size: 1.4rem;
+  }
+
+  .cart-icon span {
+    font-size: 0.7rem;
+  }
+
+  .cart-icon .total-price {
+    font-size: 0.65rem;
+  }
+}
+
+/* Layar Extra Kecil (<576px) */
+@media (max-width: 575px) {
+  .cart-icon {
+    width: 60px; /* Lebih kecil untuk layar sangat kecil */
+    padding: 6px;
+    font-size: 0.9rem;
+    right: 10px; /* Mengurangi jarak dari sisi kanan */
+  }
+
+  .cart-icon i {
+    font-size: 1.3rem;
+  }
+
+  .cart-icon span {
+    font-size: 0.65rem;
+  }
+
+  .cart-icon .total-price {
+    font-size: 0.65rem; /* Sesuaikan ukuran font */
+  }
+}
+
+/* Sidebar Styles */
+.product-sidebar {
+  position: fixed;
+  top: 0;
+  right: -100%; /* Awalnya tersembunyi */
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+  background: #fff; /* Warna latar belakang putih */
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  transition: right 0.3s ease-in-out; /* Efek transisi */
+}
+
+.product-sidebar.open {
+  right: 0; /* Muncul ketika toggle */
+}
+
+/* Sidebar Header */
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #b48360;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.sidebar-header i {
+  font-size: 1.5rem;
+}
+
+.sidebar-header .close-btn {
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.sidebar-header .close-btn:hover {
+  color: #e27c5e; /* Warna terang untuk hover */
+}
+
+/* Sidebar Content */
+.sidebar-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  background: #f9f9f9; /* Latar belakang konten */
+}
+
+.sidebar-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sidebar-content::-webkit-scrollbar-thumb {
+  background: #7a4b2a;
+  border-radius: 4px;
+}
+
+/* Sidebar Item */
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-item img {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+.sidebar-item h4 {
+  font-size: 1rem;
+  margin: 0;
+  color: #333;
+}
+
+.sidebar-item p.price {
+  font-size: 0.9rem;
+  color: #7a4b2a; /* Warna coklat untuk harga */
+}
+
+/* Quantity Controls */
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.quantity-controls button {
+  background-color: #b48360; /* Warna coklat untuk tombol */
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.quantity-controls button:hover {
+  background-color: #9b5a3e; /* Warna coklat muda saat hover */
+}
+
+.quantity-controls span {
+  font-size: 1rem;
+  color: #333;
+  margin: 0 10px;
+}
+
+/* Sidebar Footer */
+.sidebar-footer {
+  padding: 20px;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-checkout {
+  background-color: #b48360; /* Warna coklat untuk tombol checkout */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn-checkout:hover {
+  background-color: #9b5a3e; /* Warna coklat muda saat hover */
+}
+
+.sidebar-footer span {
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .product-sidebar {
+    max-width: 100%; /* Lebar penuh untuk perangkat kecil */
+  }
+
+  .sidebar-item img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .quantity-controls button {
+    padding: 5px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar-header {
+    font-size: 1rem;
+  }
+
+  .btn-checkout {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Modal */
+.modal {
+  display: none; /* Modal tersembunyi secara default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fff; /* Warna putih untuk konten modal */
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 600px; /* Ukuran maksimum lebih besar untuk layar besar */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-family: "Roboto", sans-serif;
+}
+
+.modal-content h2,
+.modal-content h3,
+.modal-content h4 {
+  margin-bottom: 15px;
+  color: #b48360; /* Warna coklat untuk teks */
+  font-weight: bold;
+}
+
+.close-btn {
+  float: right;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #b48360; /* Warna coklat untuk tombol close */
+}
+
+.close-btn:hover {
+  color: #e27c5e; /* Warna terang saat hover */
+}
+
+/* Tombol Pembayaran */
+.payment-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.btn-payment {
+  background-color: #b48360; /* Warna coklat untuk tombol */
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn-payment:hover {
+  background-color: #9b5a3e; /* Warna coklat muda saat hover */
+}
+
+.btn-checkout.disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Responsivitas */
+
+/* Layar Extra Besar (≥1200px) */
+@media (min-width: 1200px) {
+  .modal-content {
+    max-width: 700px; /* Modal lebih besar pada layar besar */
+  }
+
+  .btn-payment {
+    font-size: 1.1rem; /* Ukuran font lebih besar pada layar besar */
+  }
+
+  .close-btn {
+    font-size: 1.8em; /* Ukuran close button sedikit lebih besar */
+  }
+}
+
+/* Layar Besar (≥992px dan <1200px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .modal-content {
+    max-width: 600px; /* Ukuran modal sedikit lebih kecil pada layar besar */
+  }
+
+  .btn-payment {
+    font-size: 1rem;
+  }
+}
+
+/* Layar Sedang (≥768px dan <992px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .modal-content {
+    max-width: 550px; /* Ukuran modal lebih kecil untuk layar sedang */
+  }
+
+  .btn-payment {
+    font-size: 0.95rem;
+  }
+}
+
+/* Layar Kecil (≥576px dan <768px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .modal-content {
+    max-width: 450px; /* Modal lebih kecil untuk layar kecil */
+  }
+
+  .btn-payment {
+    font-size: 0.9rem;
+  }
+}
+
+/* Layar Extra Kecil (<576px) */
+@media (max-width: 575px) {
+  .modal-content {
+    max-width: 90%; /* Modal menggunakan lebar penuh di layar kecil */
+  }
+
+  .btn-payment {
+    font-size: 0.85rem;
+  }
+}
+
+/* footer */
+#footer {
+  width: 100%;
+  background: #f4d8b4;
+  margin-top: 50px;
+  padding: 20px 40px;
+  font-family: "Roboto", sans-serif;
+}
+
+.footer-logo img {
+  width: 160px;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+#footer .socail-links i {
+  font-size: 17px;
+  margin-left: 10px;
+  margin-top: 30px;
+  padding: 10px;
+  background: #5a3e2b;
+  color: #fff8f2;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.credite {
+  color: #5a3e2b;
+  margin-top: 20px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.credite a {
+  text-decoration: none;
+  color: #4a2c1a;
+  font-weight: bold;
+}
+
+.copyright span {
+  color: #4a2c1a;
+}
+/* footer */
+
+.arrow {
+  position: fixed;
+  border-radius: 50px;
+  height: 100px;
+  bottom: -60px; /* Start below the viewport */
+  right: 20px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 50px;
+  display: none; /* Initially hidden */
+  z-index: 1000;
+  opacity: 0; /* Initially invisible */
+  transition: opacity 0.3s ease-out, bottom 0.3s ease-out;
+}
+
+/* Add visible class to show the arrow with animation */
+.arrow.visible {
+  display: block;
+  bottom: 40px; /* Move it up to the final position */
+  opacity: 1; /* Make it visible */
+  animation: slideUp 0.5s ease-out forwards; /* Apply animation */
+}
+
+/* Keyframe for the slide-up animation */
+@keyframes slideUp {
+  0% {
+    bottom: -60px; /* Start below the screen */
+    opacity: 0; /* Invisible */
+  }
+  100% {
+    bottom: 40px; /* End at the desired position */
+    opacity: 1; /* Fully visible */
+  }
+}

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>coffee Shop</title>
+    <link rel="stylesheet" href="../css/Blog.CSS" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <!-- bootstrap links -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- bootstrap links -->
+    <!-- fonts links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- fonts links -->
+  </head>
+  <body>
+    <div class="all-content">
+      <!-- navbar -->
+      <nav class="navbar navbar-expand-lg" id="navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/index.html" id="logo"
+            ><img src="/images/logo.png" alt=""
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span
+              ><i
+                class="fa-solid fa-bars"
+                style="color: white; font-size: 23px"
+              ></i
+            ></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/index.html"
+                  >Home</a
+                >
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+              </li> -->
+              <li class="nav-item">
+                <a class="nav-link" href="Menu.html">Menu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Shopping.html">Shopping</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Galeri.html">Gallary</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="Blog.html">Blogs</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      <!-- navbar -->
+
+      <!-- Blog Section -->
+      <section class="blogs">
+        <h1>Explore <span>Our Blogs</span></h1>
+        <!-- Page Content -->
+        <div class="container">
+          <div class="row">
+            <!-- Blog Entries -->
+            <div class="col-lg-8">
+              <!-- Featured Blog Post -->
+              <div
+                class="card mb-4 blog-card"
+                data-keyword="espresso, rahasia, kopi"
+              >
+                <a href="#"
+                  ><img
+                    class="card-img-top blog-card-img-top"
+                    src="/images/blog1.jpeg"
+                    alt="..."
+                /></a>
+                <div class="card-body blog-card-body">
+                  <div class="small text-muted">22 Januari 2025</div>
+                  <h2 class="card-title blog-card-title">
+                    Rahasia Membuat Espresso yang Sempurna
+                  </h2>
+                  <p class="card-text blog-card-text">
+                    Temukan rahasia di balik secangkir espresso yang sempurna.
+                    Dari pemilihan biji kopi berkualitas hingga teknik
+                    penyeduhan yang tepat, semua yang Anda butuhkan ada di sini.
+                  </p>
+                  <a class="btn btn-primary blog-card-btn" href="#"
+                    >Baca selengkapnya →</a
+                  >
+                </div>
+              </div>
+              <!-- Nested Row for Non-Featured Blog Posts -->
+              <div class="row">
+                <div class="col-lg-6">
+                  <!-- Blog Post -->
+                  <div
+                    class="card mb-4 blog-card"
+                    data-keyword="manfaat, kopi, kesehatan"
+                  >
+                    <a href="#"
+                      ><img
+                        class="card-img-top blog-card-img-top"
+                        src="/images/blog2.jpeg"
+                        alt="..."
+                    /></a>
+                    <div class="card-body blog-card-body">
+                      <div class="small text-muted">20 Januari 2025</div>
+                      <h2 class="card-title blog-card-title h4">
+                        Manfaat Kopi untuk Kesehatan
+                      </h2>
+                      <p class="card-text blog-card-text">
+                        Kopi bukan hanya minuman favorit, tapi juga memiliki
+                        banyak manfaat untuk kesehatan. Ketahui lebih banyak
+                        manfaatnya di sini.
+                      </p>
+                      <a class="btn btn-primary blog-card-btn" href="#"
+                        >Baca selengkapnya →</a
+                      >
+                    </div>
+                  </div>
+                  <!-- Blog Post -->
+                  <div
+                    class="card mb-4 blog-card"
+                    data-keyword="sejarah, kopi, indonesia"
+                  >
+                    <a href="#"
+                      ><img
+                        class="card-img-top blog-card-img-top"
+                        src="/images/blog3.jpeg"
+                        alt="..."
+                    /></a>
+                    <div class="card-body blog-card-body">
+                      <div class="small text-muted">18 Januari 2025</div>
+                      <h2 class="card-title blog-card-title h4">
+                        Sejarah Kopi di Indonesia
+                      </h2>
+                      <p class="card-text blog-card-text">
+                        Indonesia adalah salah satu produsen kopi terbesar di
+                        dunia. Jelajahi sejarah panjang kopi di tanah air ini.
+                      </p>
+                      <a class="btn btn-primary blog-card-btn" href="#"
+                        >Baca selengkapnya →</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <!-- Blog Post -->
+                  <div
+                    class="card mb-4 blog-card"
+                    data-keyword="latte, art, pemula"
+                  >
+                    <a href="#"
+                      ><img
+                        class="card-img-top blog-card-img-top"
+                        src="/images/blog4.jpeg"
+                        alt="..."
+                    /></a>
+                    <div class="card-body blog-card-body">
+                      <div class="small text-muted">15 Januari 2025</div>
+                      <h2 class="card-title blog-card-title h4">
+                        Cara Membuat Latte Art untuk Pemula
+                      </h2>
+                      <p class="card-text blog-card-text">
+                        Ingin belajar membuat latte art seperti barista
+                        profesional? Simak tips dan trik mudah untuk pemula.
+                      </p>
+                      <a class="btn btn-primary blog-card-btn" href="#"
+                        >Baca selengkapnya →</a
+                      >
+                    </div>
+                  </div>
+                  <!-- Blog Post -->
+                  <div
+                    class="card mb-4 blog-card"
+                    data-keyword="arabika, robusta, kopi"
+                  >
+                    <a href="#"
+                      ><img
+                        class="card-img-top blog-card-img-top"
+                        src="/images/blog5.jpeg"
+                        alt="..."
+                    /></a>
+                    <div class="card-body blog-card-body">
+                      <div class="small text-muted">10 Januari 2025</div>
+                      <h2 class="card-title blog-card-title h4">
+                        Perbedaan Arabika dan Robusta
+                      </h2>
+                      <p class="card-text blog-card-text">
+                        Arabika dan Robusta adalah dua jenis kopi yang paling
+                        populer. Apa saja perbedaan keduanya? Temukan jawabannya
+                        di sini.
+                      </p>
+                      <a class="btn btn-primary blog-card-btn" href="#"
+                        >Baca selengkapnya →</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Pagination -->
+              <nav aria-label="Pagination">
+                <hr class="my-0" />
+                <ul class="pagination justify-content-center my-4">
+                  <li class="page-item disabled">
+                    <a
+                      class="page-link"
+                      href="#"
+                      tabindex="-1"
+                      aria-disabled="true"
+                      >Lebih Baru</a
+                    >
+                  </li>
+                  <li class="page-item active" aria-current="page">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">2</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">3</a>
+                  </li>
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#">...</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">15</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">Lebih Lama</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <!-- Side Widgets -->
+            <div class="col-lg-4">
+              <!-- Search Widget -->
+              <div class="card mb-4 search-card">
+                <div class="card-header search-card-header">Pencarian</div>
+                <div class="card-body search-card-body">
+                  <div class="input-group search-input-group">
+                    <input
+                      class="form-control search-input"
+                      type="text"
+                      id="search-input"
+                      placeholder="Cari artikel..."
+                      aria-label="Cari artikel..."
+                      aria-describedby="button-search"
+                    />
+                    <button
+                      class="btn search-btn"
+                      id="button-search"
+                      type="button"
+                    >
+                      Cari
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- Categories Widget -->
+              <div class="card mb-4 category-card">
+                <div class="card-header category-card-header">Kategori</div>
+                <div class="card-body category-card-body">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <ul class="list-unstyled category-list">
+                        <li><a href="#">Resep Kopi</a></li>
+                        <li><a href="#">Sejarah Kopi</a></li>
+                        <li><a href="#">Kesehatan</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-sm-6">
+                      <ul class="list-unstyled category-list">
+                        <li><a href="#">Teknik Barista</a></li>
+                        <li><a href="#">Kopi Lokal</a></li>
+                        <li><a href="#">Tutorial</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Side Widget -->
+              <!-- <div class="card mb-4">
+                <div class="card-header">Tentang Kami</div>
+                <div class="card-body">
+                  Kami adalah coffee shop yang berkomitmen untuk memberikan
+                  pengalaman kopi terbaik. Jelajahi artikel kami untuk mengenal
+                  lebih jauh tentang kopi dan budaya di sekitarnya.
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Blog Section -->
+
+      <!-- footer -->
+      <footer id="footer">
+        <div class="footer-logo text-center">
+          <img src="/images/logo.png" alt="" />
+        </div>
+        <div class="socail-links text-center">
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-facebook-f"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-youtube"></i>
+          <i class="fa-brands fa-pinterest-p"></i>
+        </div>
+        <div class="copyright text-center">
+          &copy; Copyright <strong><span>Coffee Shop</span></strong
+          >. All Rights Reserved
+        </div>
+      </footer>
+      <!-- footer -->
+
+      <a href="#" class="arrow"
+        ><i><img src="/images/up-arrow.png" alt="" width="50px" /></i
+      ></a>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="/js/About.js"></script> -->
+    <script src="../js/Blog.js"></script>
+  </body>
+</html>

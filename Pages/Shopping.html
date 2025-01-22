@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>coffee Shop</title>
+    <link rel="stylesheet" href="../css/Shopping.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <!-- bootstrap links -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- bootstrap links -->
+    <!-- fonts links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome for cart icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <!-- fonts links -->
+  </head>
+  <body>
+    <div class="all-content">
+      <!-- navbar -->
+      <nav class="navbar navbar-expand-lg" id="navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../index.html" id="logo"
+            ><img src="../images/logo.png" alt=""
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span
+              ><i
+                class="fa-solid fa-bars"
+                style="color: white; font-size: 23px"
+              ></i
+            ></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/index.html"
+                  >Home</a
+                >
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="/index.html#about">About</a>
+              </li> -->
+              <li class="nav-item">
+                <a class="nav-link" href="/Pages/Menu.html">Menu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/Pages/Shopping.html"
+                  >Shopping</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/Pages/Galeri.html">Gallary</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/Pages/Contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/Pages/Blog.html">Blogs</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      <!-- navbar -->
+
+      <!-- Ikon Keranjang -->
+      <div id="cartIcon" class="cart-icon" onclick="toggleCart()">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span id="cartCount">0 items</span>
+        <span class="total-price" id="totalPrice">0k</span>
+      </div>
+
+      <!-- Product -->
+      <section id="product" class="product">
+        <div class="container">
+          <div class="heading4">Products</div>
+        </div>
+        <div class="container" id="container3">
+          <div class="row">
+            <!-- Product 1: Arabic Coffee -->
+            <div class="col-md-3 py-3 py-md-0">
+              <div class="card">
+                <img
+                  src="/images/arabica coffee.png"
+                  alt="Arabic Coffee"
+                  class="product-img"
+                  onclick="addToCart('Arabic Coffee', 'arabica', 120, '/images/arabica coffee.png', this)"
+                />
+                <div class="card-body">
+                  <h3>Arabic Coffee</h3>
+                  <p>
+                    120k <strike>150k</strike>
+                    <span>
+                      <i
+                        class="fa-solid fa-cart-shopping cart-shopping"
+                        onclick="addToCart('Arabic Coffee', 'arabica', 120, '/images/arabica coffee.png', this.closest('.card').querySelector('.product-img'))"
+                      ></i>
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 2: Cappuccino Coffee -->
+            <div class="col-md-3 py-3 py-md-0">
+              <div class="card">
+                <img
+                  src="/images/Cappuccino coffee.png"
+                  alt="Cappuccino coffee"
+                  class="product-img"
+                  onclick="addToCart('Cappuccino Coffee', 'Cappuccino', 100, '/images/Cappuccino coffee.png', this)"
+                />
+                <div class="card-body">
+                  <h3>Cappuccino Coffee</h3>
+                  <p>
+                    100k <strike>130k</strike>
+                    <span>
+                      <i
+                        class="fa-solid fa-cart-shopping cart-shopping"
+                        onclick="addToCart('Cappuccino Coffee', 'Cappuccino', 100, '/images/Cappuccino coffee.png', this.closest('.card').querySelector('.product-img'))"
+                      ></i>
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 3: Black Coffee -->
+            <div class="col-md-3 py-3 py-md-0">
+              <div class="card">
+                <img
+                  src="/images/Black Coffee.png"
+                  alt="Black Coffee"
+                  class="product-img"
+                  onclick="addToCart('Black Coffee', 'Black', 150, '/images/Black Coffee.png', this)"
+                />
+                <div class="card-body">
+                  <h3>Black Coffee</h3>
+                  <p>
+                    150k <strike>180k</strike>
+                    <span>
+                      <i
+                        class="fa-solid fa-cart-shopping cart-shopping"
+                        onclick="addToCart('Black Coffee', 'Black', 150, '/images/Black Coffee.png', this.closest('.card').querySelector('.product-img'))"
+                      ></i>
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 4: Decaf Coffee -->
+            <div class="col-md-3 py-3 py-md-0">
+              <div class="card">
+                <img
+                  src="/images/Decaf caffee.png"
+                  alt="Decaf Caffee"
+                  class="product-img"
+                  onclick="addToCart('Decaf Caffee', 'Decaf', 140, '/images/Decaf caffee.png', this)"
+                />
+                <div class="card-body">
+                  <h3>Decaf Caffee</h3>
+                  <p>
+                    140k <strike>170k</strike>
+                    <span>
+                      <i
+                        class="fa-solid fa-cart-shopping cart-shopping"
+                        onclick="addToCart('Decaf Caffee', 'Decaf', 140, '/images/Decaf caffee.png', this.closest('.card').querySelector('.product-img'))"
+                      ></i>
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sidebar -->
+      <div id="productSidebar" class="product-sidebar">
+        <div class="sidebar-header">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span id="cartCountSidebar">0 items</span>
+          <span class="close-btn" onclick="closeSidebar()">&times;</span>
+        </div>
+        <div id="sidebarContent" class="sidebar-content"></div>
+        <div class="sidebar-footer">
+          <button id="checkoutButton" class="btn-checkout disabled" disabled>
+            Checkout
+          </button>
+          <span id="checkoutTotal">Total: 0k</span>
+        </div>
+      </div>
+
+      <!-- Modal Checkout -->
+      <div id="checkoutModal" class="modal">
+        <div class="modal-content">
+          <span class="close-btn" onclick="closeCheckoutModal()">&times;</span>
+          <h2>Checkout</h2>
+          <div id="checkoutDetails">
+            <h3>Order Summary</h3>
+            <div id="orderItems"></div>
+            <h4 id="totalAmount"></h4>
+          </div>
+          <h3>Choose Payment Method</h3>
+          <div class="payment-methods">
+            <button class="btn-payment" onclick="payViaQRIS()">
+              Pay via QRIS
+            </button>
+            <button class="btn-payment" onclick="payViaBank()">
+              Pay via Bank
+            </button>
+            <button class="btn-payment" onclick="payViaWhatsApp()">
+              Pay via WhatsApp
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- footer -->
+      <footer id="footer">
+        <div class="footer-logo text-center">
+          <img src="../images/logo.png" alt="" />
+        </div>
+        <div class="socail-links text-center">
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-facebook-f"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-youtube"></i>
+          <i class="fa-brands fa-pinterest-p"></i>
+        </div>
+
+        <div class="copyright text-center">
+          &copy; Copyright <strong><span>Coffee Shop</span></strong
+          >. All Rights Reserved
+        </div>
+      </footer>
+      <!-- footer -->
+
+      <a href="#" class="arrow"
+        ><i><img src="../images/up-arrow.png" alt="" width="50px" /></i
+      ></a>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/Shopping.js"></script>
+  </body>
+</html>

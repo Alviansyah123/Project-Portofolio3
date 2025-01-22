@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>coffee Shop</title>
+    <link rel="stylesheet" href="../css/menu.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <!-- bootstrap links -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- bootstrap links -->
+    <!-- fonts links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- fonts links -->
+  </head>
+  <body>
+    <div class="all-content">
+      <!-- navbar -->
+      <nav class="navbar navbar-expand-lg" id="navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/index.html" id="logo"
+            ><img src="/images/logo.png" alt=""
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span
+              ><i
+                class="fa-solid fa-bars"
+                style="color: white; font-size: 23px"
+              ></i
+            ></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="../index.html"
+                  >Home</a
+                >
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="../index.html#about">About</a>
+              </li> -->
+              <li class="nav-item">
+                <a class="nav-link active" href="#menu">Menu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../Pages/Shopping.html">Shopping</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../Pages/Galeri.html">Gallary</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/Pages/Contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/Pages/Blog.html">Blogs</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      <!-- navbar -->
+
+      <!-- top cards -->
+      <section class="top-cards">
+        <div class="heading2">Top <span>Categories</span></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 py-3 py-md-0">
+              <div class="card">
+                <img src="/images/c1.png" alt="Espresso" />
+                <h3>Espresso</h3>
+                <!-- Instagram Icon Inside the Card -->
+                <div class="instagram-icon">
+                  <a href="https://www.instagram.com" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 py-3 py-md-0">
+              <div class="card">
+                <img src="/images/c1.png" alt="Cappuccino" />
+                <h3>Cappuccino</h3>
+                <!-- Instagram Icon Inside the Card -->
+                <div class="instagram-icon">
+                  <a href="https://www.instagram.com" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 py-3 py-md-0">
+              <div class="card">
+                <img src="/images/c1.png" alt="Latte" />
+                <h3>Latte</h3>
+                <!-- Instagram Icon Inside the Card -->
+                <div class="instagram-icon">
+                  <a href="https://www.instagram.com" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- top cards -->
+
+      <!-- Menu Section -->
+      <section class="menu" id="menu">
+        <div class="container">
+          <div class="heading3">Menu</div>
+        </div>
+
+        <!-- Kategori Buttons -->
+        <div class="container text-center my-3">
+          <button
+            class="btn btn-primary category-btn"
+            onclick="filterMenu('coffee')"
+          >
+            Coffee
+          </button>
+          <button
+            class="btn btn-secondary category-btn"
+            onclick="filterMenu('non-coffee')"
+          >
+            Non Coffee
+          </button>
+          <button
+            class="btn btn-success category-btn"
+            onclick="filterMenu('tea')"
+          >
+            Tea
+          </button>
+          <button
+            class="btn btn-warning category-btn"
+            onclick="filterMenu('ice-blended')"
+          >
+            Ice Blended
+          </button>
+          <button
+            class="btn btn-info category-btn"
+            onclick="filterMenu('mocktail')"
+          >
+            Mocktail
+          </button>
+          <button class="btn btn-dark category-btn" onclick="filterMenu('all')">
+            Show All
+          </button>
+        </div>
+
+        <!-- Coffee Section -->
+        <div class="container menu-category" id="coffee">
+          <h3 class="category-heading">Coffee</h3>
+          <div class="row">
+            <div class="col-md-3 py-3">
+              <div class="card">
+                <img src="/images/m1.png" alt="Espresso" />
+                <div class="card-body">
+                  <h3>Espresso</h3>
+                  <p>20k <strike>25k</strike></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 py-3">
+              <div class="card">
+                <img src="/images/m6.png" alt="Latte" />
+                <div class="card-body">
+                  <h3>Latte</h3>
+                  <p>30k <strike>35k</strike></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 py-3">
+              <div class="card">
+                <img src="/images/m1.png" alt="Cappuccino" />
+                <div class="card-body">
+                  <h3>Cappuccino</h3>
+                  <p>25k <strike>30k</strike></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 py-3">
+              <div class="card">
+                <img src="/images/m6.png" alt="Americano" />
+                <div class="card-body">
+                  <h3>Americano</h3>
+                  <p>35k <strike>40k</strike></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Non Coffee Section -->
+        <div
+          class="container menu-category"
+          id="non-coffee"
+          style="display: none"
+        >
+          <h3 class="category-heading">Non Coffee</h3>
+          <div class="row">
+            <div class="col-md-3 py-3">
+              <div class="card">
+                <img src="/images/m4.png" alt="Hot Chocolate" />
+                <div class="card-body">
+                  <h3>Hot Chocolate</h3>
+                  <p>25k <strike>30k</strike></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 py-3">
+              <div class="card">
+                <img src="/images/m5.png" alt="Matcha Latte" />
+                <div class="card-body">
+                  <h3>Matcha Latte</h3>
+                  <p>30k <strike>35k</strike></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 py-3">
+              <div class="card">
+                <img src="/images/m4.png" alt="Milkshake" />
+                <div class="card-body">
+                  <h3>Milkshake</h3>
+                  <p>28k <strike>33k</strike></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 py-3">
+              <div class="card">
+                <img src="/images/m5.png" alt="Honey Lemon" />
+                <div class="card-body">
+                  <h3>Honey Lemon</h3>
+                  <p>20k <strike>25k</strike></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tea Section -->
+        <div class="container menu-category" id="tea" style="display: none">
+          <h3 class="category-heading">Tea</h3>
+          <div class="row">
+            <div class="col-md-3 py-3">
+              <div class="card">
+                <img src="/images/m3.png" alt="Green Tea" />
+                <div class="card-body">
+                  <h3>Green Tea</h3>
+                  <p>18k <strike>22k</strike></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 py-3">
+              <div class="card">
+                <img src="/images/m7.png" alt="Black Tea" />
+                <div class="card-body">
+                  <h3>Black Tea</h3>
+                  <p>15k <strike>20k</strike></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 py-3">
+              <div class="card">
+                <img src="/images/m3.png" alt="Jasmine Tea" />
+                <div class="card-body">
+                  <h3>Jasmine Tea</h3>
+                  <p>18k <strike>22k</strike></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 py-3">
+              <div class="card">
+                <img src="/images/m7.png" alt="Chamomile Tea" />
+                <div class="card-body">
+                  <h3>Chamomile Tea</h3>
+                  <p>22k <strike>28k</strike></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ice Blended Section -->
+        <div
+          class="container menu-category"
+          id="ice-blended"
+          style="display: none"
+        >
+          <h3 class="category-heading">Ice Blended</h3>
+          <div class="row">
+            <div class="col-md-3 py-3">
+              <div class="card">
+                <img src="/images/m1.png" alt="Frappuccino" />
+                <div class="card-body">
+                  <h3>Frappuccino</h3>
+                  <p>35k <strike>40k</strike></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 py-3">
+              <div class="card">
+                <img src="/images/m2.png" alt="Oreo Blend" />
+                <div class="card-body">
+                  <h3>Oreo Blend</h3>
+                  <p>32k <strike>37k</strike></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 py-3">
+              <div class="card">
+                <img src="/images/m1.png" alt="Mango Blend" />
+                <div class="card-body">
+                  <h3>Mango Blend</h3>
+                  <p>30k <strike>35k</strike></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 py-3">
+              <div class="card">
+                <img src="/images/m2.png" alt="Berry Blend" />
+                <div class="card-body">
+                  <h3>Berry Blend</h3>
+                  <p>30k <strike>35k</strike></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mocktail Section -->
+        <div
+          class="container menu-category"
+          id="mocktail"
+          style="display: none"
+        >
+          <h3 class="category-heading">Mocktail</h3>
+          <div class="row">
+            <div class="col-md-3 py-3">
+              <div class="card">
+                <img src="/images/m5.png" alt="Mojito" />
+                <div class="card-body">
+                  <h3>Mojito</h3>
+                  <p>25k <strike>30k</strike></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 py-3">
+              <div class="card">
+                <img src="/images/m8.png" alt="Sunset" />
+                <div class="card-body">
+                  <h3>Sunset</h3>
+                  <p>28k <strike>33k</strike></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 py-3">
+              <div class="card">
+                <img src="/images/m5.png" alt="Summer Breeze" />
+                <div class="card-body">
+                  <h3>Summer Breeze</h3>
+                  <p>30k <strike>35k</strike></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 py-3">
+              <div class="card">
+                <img src="/images/m8.png" alt="Tropical Punch" />
+                <div class="card-body">
+                  <h3>Tropical Punch</h3>
+                  <p>32k <strike>37k</strike></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Menu -->
+
+      <!-- footer -->
+      <footer id="footer">
+        <div class="footer-logo text-center">
+          <img src="/images/logo.png" alt="" />
+        </div>
+        <div class="socail-links text-center">
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-facebook-f"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-youtube"></i>
+          <i class="fa-brands fa-pinterest-p"></i>
+        </div>
+
+        <div class="copyright text-center">
+          &copy; Copyright <strong><span>Coffee Shop</span></strong
+          >. All Rights Reserved
+        </div>
+      </footer>
+      <!-- footer -->
+
+      <a href="#" class="arrow"
+        ><i><img src="/images/up-arrow.png" alt="" width="50px" /></i
+      ></a>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Add Font Awesome CDN -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="../js/Menu.js"></script>
+  </body>
+</html>
