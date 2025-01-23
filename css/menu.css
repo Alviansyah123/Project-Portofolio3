@@ -559,6 +559,69 @@ html::-webkit-scrollbar-thumb:hover {
 
 /* menu */
 
+/* Brochure Section */
+#brochure-section {
+  margin: 20px auto; /* Posisi di bawah elemen sebelumnya */
+  max-width: 300px; /* Tidak terlalu lebar */
+  padding: 20px;
+  background-color: #f4d8b4; /* Warna sesuai tema */
+  border-radius: 20px; /* Background rounded */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+#brochure-section:hover {
+  transform: translateY(-5px); /* Bergerak sedikit ke atas */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Button Style */
+.download-brochure {
+  font-size: 16px;
+  font-weight: bold;
+  color: #5a3e2b; /* Warna teks */
+  background-color: #fff8f2; /* Warna latar */
+  border: 2px solid #f4d8b4;
+  padding: 10px 20px;
+  border-radius: 50px; /* Membuat tombol rounded */
+  transition: all 0.4s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.download-brochure:hover {
+  background-color: #f4d8b4;
+  color: #5a3e2b; /* Teks berubah warna */
+  border-color: #fff8f2;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Icon Style */
+.download-brochure i {
+  font-size: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #brochure-section {
+    max-width: 90%; /* Lebar menyesuaikan layar kecil */
+    padding: 15px;
+  }
+
+  .download-brochure {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .download-brochure i {
+    font-size: 18px;
+  }
+}
+
 /* footer */
 #footer {
   width: 100%;

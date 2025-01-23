@@ -23,6 +23,26 @@ html::-webkit-scrollbar {
   height: 12px;
 }
 
+.modal::-webkit-scrollbar-thumb:hover {
+  background: #8b5a3b;
+}
+
+.modal::-webkit-scrollbar-track {
+  background: #f4d8b4;
+  border-radius: 10px;
+}
+
+.modal::-webkit-scrollbar-thumb {
+  background: #b2744c;
+  border-radius: 10px;
+  border: 2px solid #e2c09b;
+}
+
+.modal::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
 html::-webkit-scrollbar-thumb:hover {
   background: #8b5a3b;
 }
