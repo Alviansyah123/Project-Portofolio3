@@ -36,21 +36,180 @@ function filterMenu(category) {
   });
 }
 
-// Get the arrow element
 const arrow = document.querySelector(".arrow");
 
-// Function to show/hide the arrow based on scroll position
 window.addEventListener("scroll", () => {
   if (window.scrollY > 300) {
-    // When user scrolls more than 300px down
-    arrow.classList.add("visible"); // Show the arrow
+    arrow.classList.add("visible");
   } else {
-    arrow.classList.remove("visible"); // Hide the arrow
+    arrow.classList.remove("visible");
   }
 });
 
-// Optional: Smooth scroll to the top when the arrow is clicked
 arrow.addEventListener("click", (e) => {
   e.preventDefault();
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
+
+const menuItems = [
+  { name: "Espresso", category: "coffee" },
+  { name: "Latte", category: "coffee" },
+  { name: "Cappuccino", category: "coffee" },
+  { name: "Americano", category: "coffee" },
+  { name: "Hot Chocolate", category: "non-coffee" },
+  { name: "Matcha Latte", category: "non-coffee" },
+  { name: "Milkshake", category: "non-coffee" },
+  { name: "Honey Lemon", category: "non-coffee" },
+  { name: "Green Tea", category: "tea" },
+  { name: "Black Tea", category: "tea" },
+  { name: "Jasmine Tea", category: "tea" },
+  { name: "Chamomile Tea", category: "tea" },
+  { name: "Frappuccino", category: "ice-blended" },
+  { name: "Oreo Blend", category: "ice-blended" },
+  { name: "Mango Blend", category: "ice-blended" },
+  { name: "Berry Blend", category: "ice-blended" },
+  { name: "Mojito", category: "mocktail" },
+  { name: "Sunset", category: "mocktail" },
+  { name: "Summer Breeze", category: "mocktail" },
+  { name: "Tropical Punch", category: "mocktail" },
+];
+
+function updateMenuDisplay() {
+  const input = document.getElementById("searchInput");
+  const searchValue = input.value.toLowerCase();
+  const categories = document.querySelectorAll(".menu-category");
+  const autofill = document.getElementById("autofill");
+  const notFoundMessage = document.getElementById("notFoundMessage");
+  let found = false;
+
+  autofill.innerHTML = "";
+  notFoundMessage.style.display = "none";
+
+  // Autofill suggestions excluding exact matches
+  const suggestions = menuItems.filter(
+    (item) =>
+      item.name.toLowerCase().includes(searchValue) &&
+      item.name.toLowerCase() !== searchValue
+  );
+
+  if (searchValue) {
+    suggestions.forEach((item) => {
+      const dropdownItem = document.createElement("a");
+      dropdownItem.className = "dropdown-item";
+      dropdownItem.href = "#";
+      dropdownItem.textContent = item.name;
+      dropdownItem.onclick = () => {
+        input.value = item.name;
+        autofill.style.display = "none";
+        updateMenuDisplay();
+      };
+      autofill.appendChild(dropdownItem);
+    });
+    autofill.style.display = suggestions.length ? "block" : "none";
+  } else {
+    autofill.style.display = "none";
+  }
+
+  categories.forEach((category) => {
+    const items = category.querySelectorAll(".card");
+    let categoryFound = false;
+
+    items.forEach((card) => {
+      const name = card.querySelector("h3").textContent.toLowerCase();
+      if (name.includes(searchValue)) {
+        card.style.display = "block";
+        category.style.display = "block";
+        found = true;
+        categoryFound = true;
+      } else {
+        card.style.display = "none";
+      }
+    });
+
+    category.style.display = categoryFound ? "block" : "none";
+  });
+
+  if (!found && searchValue) {
+    notFoundMessage.style.display = "block";
+  }
+}
+
+function searchMenu() {
+  const input = document.getElementById("searchInput");
+  const searchValue = input.value.toLowerCase();
+  const categories = document.querySelectorAll(".menu-category");
+  const autofill = document.getElementById("autofill");
+  const notFoundMessage = document.getElementById("notFoundMessage");
+  let found = false;
+
+  autofill.innerHTML = "";
+  notFoundMessage.style.display = "none";
+
+  // Autofill suggestions excluding exact matches
+  const suggestions = menuItems.filter(
+    (item) =>
+      item.name.toLowerCase().includes(searchValue) &&
+      item.name.toLowerCase() !== searchValue
+  );
+
+  if (searchValue) {
+    suggestions.forEach((item) => {
+      const dropdownItem = document.createElement("a");
+      dropdownItem.className = "dropdown-item";
+      dropdownItem.href = "#";
+      dropdownItem.textContent = item.name;
+      dropdownItem.onclick = () => {
+        input.value = item.name;
+        autofill.style.display = "none"; // Close autofill list
+        searchMenu(); // Update menu display
+      };
+      autofill.appendChild(dropdownItem);
+    });
+    autofill.style.display = suggestions.length ? "block" : "none";
+  } else {
+    autofill.style.display = "none";
+  }
+
+  // Update menu display
+  categories.forEach((category) => {
+    const items = category.querySelectorAll(".card");
+    let categoryFound = false;
+
+    items.forEach((card) => {
+      const name = card.querySelector("h3").textContent.toLowerCase();
+      if (name.includes(searchValue)) {
+        card.style.display = "block";
+        category.style.display = "block";
+        if (!found) {
+          card.scrollIntoView({ behavior: "smooth", block: "center" });
+          found = true;
+        }
+        categoryFound = true;
+      } else {
+        card.style.display = "none";
+      }
+    });
+
+    category.style.display = categoryFound ? "block" : "none";
+  });
+
+  if (!found && searchValue) {
+    notFoundMessage.style.display = "block";
+  }
+
+  // Reset input after search
+  input.value = "";
+  autofill.style.display = "none"; // Close autofill list
+}
+
+document
+  .querySelector("button[type='button']")
+  .addEventListener("click", () => {
+    const input = document.getElementById("searchInput");
+    const autofill = document.getElementById("autofill");
+    const notFoundMessage = document.getElementById("notFoundMessage");
+
+    input.value = ""; // Clear input
+    autofill.style.display = "none"; // Hide autofill list
+    notFoundMessage.style.display = "none"; // Hide not found message
+  });

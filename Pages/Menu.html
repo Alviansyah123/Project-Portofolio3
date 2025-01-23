@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>coffee Shop</title>
+    <link rel="icon" href="../images/logo2.ico" type="image/x-icon" />
+    <title>Coffee Shop</title>
     <link rel="stylesheet" href="../css/menu.css" />
     <link
       rel="stylesheet"
@@ -77,17 +78,32 @@
                 <a class="nav-link" href="../Pages/Blog.html">Blogs</a>
               </li>
             </ul>
-            <form class="d-flex">
+            <form class="d-flex position-relative" onsubmit="return false;">
               <input
+                id="searchInput"
                 class="form-control me-2"
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
+                onkeyup="updateMenuDisplay()"
+                autocomplete="off"
               />
-              <button class="btn btn-outline-success" type="submit">
+              <button
+                class="btn btn-outline-success"
+                type="button"
+                onclick="searchMenu()"
+              >
                 Search
               </button>
+              <div id="autofill" class="dropdown-menu"></div>
             </form>
+            <div
+              id="notFoundMessage"
+              class="alert alert-warning mt-3"
+              style="display: none"
+            >
+              Menu tidak tersedia!
+            </div>
           </div>
         </div>
       </nav>

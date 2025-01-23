@@ -31,6 +31,25 @@ html::-webkit-scrollbar-thumb:hover {
   background: #8b5a3b;
 }
 
+#autofill::-webkit-scrollbar-track {
+  background: #f4d8b4;
+  border-radius: 10px;
+}
+
+#autofill::-webkit-scrollbar-thumb {
+  background: #b2744c;
+  border-radius: 10px;
+  border: 2px solid #e2c09b;
+}
+
+#autofill::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+#autofilltml::-webkit-scrollbar-thumb:hover {
+  background: #8b5a3b;
+}
 /* navbar */
 #navbar {
   background-color: #f4d8b4;
@@ -138,13 +157,13 @@ html::-webkit-scrollbar-thumb:hover {
 }
 
 #navbar form input::placeholder {
-  color: #f4d8b4;
+  color: #4a2c1a;
   font-style: italic;
 }
 
 #navbar form button {
   background: linear-gradient(135deg, #f4d8b4, #fff8f2);
-  color: black;
+  color: #4a2c1a;
   border: none;
   padding: 10px 20px;
   border-radius: 50px;
@@ -156,8 +175,15 @@ html::-webkit-scrollbar-thumb:hover {
 
 #navbar form button:hover {
   background: #f4d8b4;
-  color: white;
+  color: #4a2c1a;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#navbar form button:active {
+  border: 2px solid #4a2c1a !important;
+  background: #e6c3a5;
+  color: #4a2c1a;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 @media (min-width: 835px) and (max-width: 1115px) {
@@ -554,6 +580,67 @@ html::-webkit-scrollbar-thumb:hover {
   .menu-category .col-md-3 {
     flex: 1 1 100%;
     max-width: 100%;
+  }
+}
+
+/* autofill */
+#autofill {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  display: none;
+  z-index: 1000;
+  background: #fff8f2;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  border: 2px solid #f4d8b4;
+  font-family: "Roboto", sans-serif;
+  padding: 10px 0;
+}
+
+#autofill .dropdown-item {
+  padding: 10px 15px;
+  color: #5a3e2b;
+  font-size: 16px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  border-radius: 5px;
+  display: block;
+}
+
+#autofill .dropdown-item:hover {
+  background: #f4d8b4;
+  color: #4a2c1a;
+  transform: translateX(5px);
+}
+
+#notFoundMessage {
+  background-color: #fff8f2;
+  color: #5a3e2b;
+  border: 2px solid #f4d8b4;
+  border-radius: 50px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+  text-align: center;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
