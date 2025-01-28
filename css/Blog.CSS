@@ -134,7 +134,7 @@ html::-webkit-scrollbar-thumb:hover {
 }
 
 #navbar form input::placeholder {
-  color: #f4d8b4;
+  color: #4a2c1a;
   font-style: italic;
 }
 
