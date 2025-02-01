@@ -4,9 +4,18 @@
   box-sizing: border-box;
   font-family: "Merriweather", serif;
 }
+
+body {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: 100vh;
+  background: #f7f5f2;
+}
+
 .all-content {
   background: #f7f5f2;
 }
+
 html::-webkit-scrollbar-track {
   background: #f4d8b4;
   border-radius: 10px;
@@ -884,5 +893,12 @@ html::-webkit-scrollbar-thumb:hover {
   100% {
     bottom: 40px; /* End at the desired position */
     opacity: 1; /* Fully visible */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1115px) {
+  #footer {
+    position: absolute;
+    bottom: 0;
   }
 }
