@@ -6,8 +6,6 @@
 }
 
 body {
-  display: grid;
-  grid-template-rows: 1fr auto;
   min-height: 100vh;
   background: #f7f5f2;
 }
@@ -897,6 +895,10 @@ html::-webkit-scrollbar-thumb:hover {
 }
 
 @media (min-width: 768px) and (max-width: 1115px) {
+  body {
+    display: grid;
+    grid-template-rows: 1fr auto;
+  }
   #footer {
     position: absolute;
     bottom: 0;
