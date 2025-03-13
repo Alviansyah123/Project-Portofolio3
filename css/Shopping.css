@@ -316,6 +316,13 @@ html::-webkit-scrollbar-thumb:hover {
   margin-top: 30px;
 }
 
+.product .card {
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
 .product h3 {
   text-align: center;
   color: #b2744c;
@@ -500,6 +507,38 @@ html::-webkit-scrollbar-thumb:hover {
 
   .cart-icon .total-price {
     font-size: 0.65rem; /* Sesuaikan ukuran font */
+  }
+}
+
+/* responsovi untuk card agat menjadi 1 baris menjadi 2 card  */
+
+@media (max-width: 768px) {
+  .product .row {
+    display: flex;
+    flex-direction: wrap;
+    justify-content: center;
+  }
+  .product .col-md-3 {
+    width: 48%;
+    margin-bottom: 15px;
+    display: flex;
+  }
+
+  .product img {
+    width: 100%;
+  }
+  .cart-shopping {
+    font-size: 1rem;
+  }
+  .product h3,
+  .product p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .product .card {
+    margin-bottom: 2px;
   }
 }
 
@@ -894,13 +933,31 @@ html::-webkit-scrollbar-thumb:hover {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1115px) {
+@media (min-width: 800px) and (max-width: 1280px) {
   body {
-    display: grid;
-    grid-template-rows: 1fr auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+  }
+  #content {
+    flex: 1;
   }
   #footer {
-    position: absolute;
-    bottom: 0;
+    margin-top: auto;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1115px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  #content {
+    flex: 1;
+  }
+  #footer {
+    margin-top: auto;
   }
 }
